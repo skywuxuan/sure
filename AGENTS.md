@@ -191,6 +191,14 @@ sure/memory/              # instance data, git-ignored, group-writable in a shar
 
 ### Targeted Checks
 
+After code changes affecting SURE workflows, follow
+`docs/asr-vad-coding-review.md` and complete the required Feed → Onboard →
+Approve → Infer → Eval evidence chain. Use `npm run check` as an auxiliary
+automated check; it does not replace the agent's workflow review. Missing
+prediction, provenance or evaluation evidence means the review is incomplete.
+Real-model acceptance is required when wrappers, audio preprocessing,
+normalization, thresholds or runtime dependencies change.
+
 ```bash
 npm run check:sure-hooks
 python3 -m py_compile sure/skills/sure_infer/scripts/*.py
